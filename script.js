@@ -1,48 +1,66 @@
-// Theme Toggle
+// ========== SCROLL POSITION MANAGEMENT ==========
+// Prevent browser auto-restore of scroll position
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+
+// Force scroll to top on page load
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+window.scrollTo(0, 0);
+
+// Also reset when page fully loads
+window.addEventListener('load', function() {
+  setTimeout(() => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  }, 0);
+});
+
+// ========== THEME TOGGLE ==========
 const themeToggle = document.querySelector(".theme-toggle");
-themeToggle.addEventListener("click", () => {
-  document.body.setAttribute(
-    "data-theme",
-    document.body.getAttribute("data-theme") === "dark" ? "light" : "dark"
-  );
-});
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.setAttribute(
+      "data-theme",
+      document.body.getAttribute("data-theme") === "dark" ? "light" : "dark"
+    );
+  });
+}
 
-// Scroll Reveal
-ScrollReveal().reveal(".reveal", {
-  distance: "60px",
-  duration: 2500,
-  delay: 400,
-});
-
-// Initialize sections with reveal class
-document.querySelectorAll("section").forEach((section) => {
-  section.classList.add("reveal");
-});
-
-// Form handling
+// ========== FORM HANDLING ==========
 const contactForm = document.querySelector(".contact-form");
-contactForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const formData = new FormData(contactForm);
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
 
-  try {
-    // Add your form submission logic here
-    console.log("Form submitted:", Object.fromEntries(formData));
-    // Show success message
-    alert("Message sent successfully!");
-    contactForm.reset();
-  } catch (error) {
-    console.error("Error:", error);
-    alert("There was an error sending your message. Please try again.");
-  }
-});
+    try {
+      console.log("Form submitted:", Object.fromEntries(formData));
+      alert("Message sent successfully!");
+      contactForm.reset();
+    } catch (error) {
+      console.error("Error:", error);
+      alert("There was an error sending your message. Please try again.");
+    }
+  });
+}
 
-// Smooth scrolling
+// ========== SMOOTH SCROLL FOR NAVIGATION LINKS ==========
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+    if (href === "#") return;
+    
     e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   });
 });
+

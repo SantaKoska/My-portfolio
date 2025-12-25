@@ -24,7 +24,7 @@
         <nav class="header__main">
           <ul class="header__links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -39,32 +39,73 @@
 
     <section id="home" class="home">
       <div class="home__content">
-        <img src="sticker.webp" alt="Sticker" class="home__image" />
-        <div>
-          <h1 class="home__title">Hey, I'm Kamal Sankar M</h1>
+        <div class="home__text-section">
+          <div class="home__header-small">Introduction</div>
+          <h1 class="home__title">Kamal Sankar M.</h1>
+          <div class="home__title-underline"></div>
           <p class="home__description">
-            A dedicated MCA student and Full Stack Developer with a strong
-            foundation in software development, robotics, and problem-solving.
-            Building innovative solutions that make a difference.
+            Product Designer and Developer, based in Kerala.
           </p>
-          <div class="home__links">
-            <a href="#projects" class="btn btn--primary">Projects</a>
-            <div class="social-links">
-              <a
-                href="https://github.com/SantaKoska"
-                target="_blank"
-                aria-label="GitHub Profile"
-              >
-                <i class="bx bxl-github"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kamal-sankar-m-918946214/"
-                target="_blank"
-                aria-label="LinkedIn Profile"
-              >
-                <i class="bx bxl-linkedin"></i>
-              </a>
+          <p class="home__description-sub">
+            Specialized in web development, system design, and problem-solving. Currently pursuing MCA at Amal Jyothi College of Engineering.
+          </p>
+          <a href="#contact" class="home__story-link">My story <i class="bx bx-arrow-back" style="transform: scaleX(-1);"></i></a>
+          
+          <div class="social-links">
+            <a
+              href="https://github.com/SantaKoska"
+              target="_blank"
+              aria-label="GitHub Profile"
+              title="GitHub"
+            >
+              <i class="bx bxl-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kamal-sankar-m-918946214/"
+              target="_blank"
+              aria-label="LinkedIn Profile"
+              title="LinkedIn"
+            >
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="Instagram Profile"
+              title="Instagram"
+            >
+              <i class="bx bxl-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <img src="sticker.webp" alt="Kamal Sankar M" class="home__image" />
+      </div>
+    </section>
+
+    <section id="services" class="services sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec">Services</h2>
+        <div class="services__grid">
+          <div class="service__card">
+            <div class="service__icon">
+              <i class="bx bxs-code"></i>
             </div>
+            <h3>Full Stack Developer</h3>
+            <p>10+ Projects</p>
+          </div>
+          <div class="service__card">
+            <div class="service__icon">
+              <i class="bx bxs-palette"></i>
+            </div>
+            <h3>UI/UX Designer</h3>
+            <p>12+ Projects</p>
+          </div>
+          <div class="service__card">
+            <div class="service__icon">
+              <i class="bx bxs-briefcase"></i>
+            </div>
+            <h3>Problem Solver</h3>
+            <p>20+ Solutions</p>
           </div>
         </div>
       </div>
@@ -80,9 +121,7 @@
               <p>
                 I'm a <strong>Full Stack Developer</strong> with a strong
                 foundation in software development, robotics, and
-                problem-solving. Currently pursuing my MCA at Amal Jyothi
-                College of Engineering, I specialize in building exceptional
-                digital experiences.
+                problem-solving. Currently working as a Jr. Data Scientist in GuideHouse, Trivandrum.
               </p>
               <p>
                 I have hands-on experience with various technologies and have
@@ -90,12 +129,6 @@
                 and system design. My academic background in Physics and
                 Computer Applications provides me with a unique analytical
                 perspective to problem-solving.
-              </p>
-              <p>
-                I'm actively seeking <strong>Job</strong> opportunities where I
-                can contribute, learn and grow. If you have a good opportunity
-                that matches my skills and experience, don't hesitate to
-                <strong>contact</strong> me.
               </p>
             </div>
             <a href="#contact" class="btn btn--med btn--theme">Contact</a>
@@ -233,6 +266,12 @@
                 <a href="tel:+919539995091" class="contact__link">9539995091</a>
               </p>
             </div>
+
+            <!-- Download resume button -->
+            <div class="contact__download">
+              <a href="New%20Resume.pdf" download class="btn btn--med btn--theme">Download Resume (PDF)</a>
+            </div>
+
           </div>
           <div class="contact__social">
             <a
